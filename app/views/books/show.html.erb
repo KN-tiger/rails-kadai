@@ -1,10 +1,13 @@
-<p id="notice">Book was successfully created.</p>
-<p><strong>Title:</strong><%= @book.title %></p>
+ <% if flash[:notice] %>
+    <p id="notice">　<%= flash[:notice] %> </p>
+ <% end %>
 
 
-<p><strong>body:</strong><%= @book.body %></p>
+<p><strong>Title:</strong><%= @bookf.title %></p>
+
+
+<p><strong>body:</strong><%= @bookf.body %></p>
 
 
 
-<a class="edit_(:id)" href="/books/(:id)/edit">Edit</a>
-<a class="back" href="/books">Back</a>
+<%= link_to "Edit", edit_book_path(@bookf.id) %>|<a  href="/books">Back</a>
